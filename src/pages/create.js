@@ -25,7 +25,7 @@ export default function Create() {
             margin: "15px 0",
         },
         title: {
-            fontSize: "17px",
+            fontSize: "16px",
             textAlign: "left",
         },
         input: {
