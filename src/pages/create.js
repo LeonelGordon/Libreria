@@ -27,6 +27,7 @@ export default function Create() {
         title: {
             fontSize: "16px",
             textAlign: "left",
+            color: 'white'
         },
         input: {
             padding: "10px",
@@ -34,6 +35,17 @@ export default function Create() {
             fontSize: "16px",
         },
 };
+
+    const buttonStyle= {
+        padding: "15px 20px",
+        minWidth: "200px",
+        border: "none",
+        borderRadius: "5px",
+        backroundcolor: "grey",
+        color: "Black",
+        fontWeigth: "bolder",
+        fontSize: "18px",
+    };
 
     function handleChange(e) {
         const name =e.target.name;
@@ -92,27 +104,29 @@ navigate("/");
 
     }
     return <Layout>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <div>Title</div>
+        <form onSubmit={handleSubmit} style= {inputStyles.formContainer}>
+            <div style= {inputStyles.Container}>
+                <div style= {inputStyles.title}>Title</div>
                 <input 
                     type="text" 
                     name="title" 
                     onChange={handleChange} 
                     value={title} 
+                    style= {inputStyles.input}
                 /> 
             </div>
-            <div>
-                    <div>Author</div>
+            <div style= {inputStyles.container}>
+                    <div style= {inputStyles.title}>Author</div>
                     <input
                         type="text"
                         name="author"
                         onChange={handleChange}
                         value={author}
+                        style= {inputStyles.input}
                     />
                 </div>
-                <div>
-                    <div>Cover</div>
+                <div style= {inputStyles.container}>
+                    <div style= {inputStyles.title}>Cover</div>
                     <input
                         type="file"
                         name="cover"
@@ -127,17 +141,18 @@ navigate("/");
                         </div>
                     
                 </div>
-                <div>
-                    <div>Introduction</div>
+                <div style= {inputStyles.container}>
+                    <div style= {inputStyles.title}>Introduction</div>
                     <input
                         type="text"
                         name="intro"
                         onChange={handleChange}
                         value={intro}
+                        style= {inputStyles.input}
                     />
                 </div>
                 <div>
-                    <div>Completed</div>
+                    <div style= {inputStyles.title}>Completed</div>
                     <input
                         type="checkbox"
                         name="completed"
@@ -145,18 +160,20 @@ navigate("/");
                         value={completed}
                     />
                 </div>
-                <div>
-                    <div>Review</div>
+                <div style= {inputStyles.container}>
+                    <div style= {inputStyles.title}>Review</div>
                     <input
                         type="text"
                         name="review"
                         onChange={handleChange}
                         value={review}
+                        style= {inputStyles.input}
                     />
                 </div>
                 <input 
                 type="submit"
                 value="Register Book"
+                style={buttonStyle}
                 />
         </form>
     </Layout>;
